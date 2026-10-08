@@ -4,6 +4,7 @@ s и возвращаемый e — двоичные векторы в виде 
 соответствие раздела 5.2), как и везде в этом пакете.
 """
 
+from bitvec import unpack_bits
 from gf import GF2m
 
 
@@ -66,9 +67,10 @@ def decode(field: GF2m, a: list[int], g: list[int], s: int, n: int, t: int) -> i
         if j - 2 * t <= 1:
             alpha[0] = field.mul(alpha[0], a[j])
 
+    s_bits = unpack_bits(s, mt)
     r = [0] * mt
     for i in range(mt):
-        if (s >> i) & 1:
+        if s_bits[i]:
             prod = 1
             for j in range(t):
                 prod = field.mul(prod, field.add(a[i], g[j]))
@@ -111,9 +113,9 @@ def decode(field: GF2m, a: list[int], g: list[int], s: int, n: int, t: int) -> i
     solution = _solve_homogeneous_system(field, equations, num_unknowns)
     if solution is None:
         return None
+    # z_0..z_{t-1} (solution[t+1:]) участвуют только в построении системы
+    # уравнений выше — для вычисления v нужны только y_0..y_t.
     y = solution[: t + 1]
-    z = solution[t + 1 :]
-    del z  # z участвует только в построении системы, не в вычислении v
 
     if y[t] == 0:
         return None

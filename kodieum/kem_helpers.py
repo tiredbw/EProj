@@ -6,6 +6,7 @@ gf.py. Байтовые строки (ключи, выход KDF/шифра) к�
 через int.from_bytes(data, "little") — младший байт соответствует младшим
 индексам вектора."""
 
+from bitvec import pack_bits
 from gost_primitives import kuznechik_encrypt_block, kdf_tree_streebog256, streebog256
 
 
@@ -40,15 +41,21 @@ def gen_weight_vec(n: int, t: int, m: int, seed: bytes) -> int:
     m_prime = 16
     ell = -(-(1 << m) // n)  # наименьшее ell: n*ell >= 2^m
 
+    sample_bytes = m_prime // 8  # m'=16 бит — всегда выровнено по байту
+
     while True:
         l_bits = 256 + ell * t * m_prime
         out = kdf_tree_streebog256(seed, l_bits)
         out_int = int.from_bytes(out, "little")
         seed_prime = (out_int & ((1 << 256) - 1)).to_bytes(32, "little")
-        v = out_int >> 256
+        v_bytes = (out_int >> 256).to_bytes((ell * t * m_prime) // 8, "little")
         mask_m = (1 << m) - 1
 
-        b = [(v >> (i * m_prime)) & mask_m for i in range(ell * t)]
+        b = []
+        for i in range(ell * t):
+            offset = i * sample_bytes
+            sample = int.from_bytes(v_bytes[offset : offset + sample_bytes], "little")
+            b.append(sample & mask_m)
         indices = [j for j in range(ell * t) if b[j] < n]
         if len(indices) < t:
             seed = seed_prime
@@ -59,7 +66,7 @@ def gen_weight_vec(n: int, t: int, m: int, seed: bytes) -> int:
             seed = seed_prime
             continue
 
-        e = 0
+        bits = [0] * n
         for value in a:
-            e |= 1 << value
-        return e
+            bits[value] = 1
+        return pack_bits(bits)

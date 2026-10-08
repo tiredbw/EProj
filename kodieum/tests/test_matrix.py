@@ -21,11 +21,11 @@ def test_row_reduce_is_idempotent_on_its_own_output():
     # вернуть ту же матрицу A без изменений.
     pk, _sk = keygen(FIELD, N, T)
     full_rows = [(1 << i) | (pk[i] << MT) for i in range(MT)]
-    assert _row_reduce_to_systematic(full_rows, N, MT) == pk
+    assert _row_reduce_to_systematic(full_rows, MT) == pk
 
 
 def test_row_reduce_returns_none_for_singular_matrix():
     # Две одинаковые строки делают первые MT столбцов невозможными для
     # приведения к единичной матрице.
     rows = [0b11] * MT
-    assert _row_reduce_to_systematic(rows, N, MT) is None
+    assert _row_reduce_to_systematic(rows, MT) is None
