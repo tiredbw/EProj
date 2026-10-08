@@ -30,3 +30,16 @@ def test_corrupted_ciphertext_yields_different_shared_key():
     shk_a, enk = encaps(FIELD, N, T, pk)
     shk_b = decaps(FIELD, N, T, sk, enk ^ 1)
     assert shk_a != shk_b
+
+
+def test_decaps_with_wrong_key_pair_does_not_crash():
+    # На таких крошечных n,t (выбраны ради скорости тестов, не безопасности)
+    # структура кода слишком слаба, чтобы гарантировать несовпадение shk для
+    # чужого ключа — это не контракт корректности. Проверяем только то, что
+    # Decaps не падает и возвращает корректный 256-битный результат.
+    pk1, _sk1 = keygen(FIELD, N, T)
+    _pk2, sk2 = keygen(FIELD, N, T)
+    _shk_a, enk = encaps(FIELD, N, T, pk1)
+    shk_wrong = decaps(FIELD, N, T, sk2, enk)
+    assert isinstance(shk_wrong, int)
+    assert 0 <= shk_wrong < (1 << 256)

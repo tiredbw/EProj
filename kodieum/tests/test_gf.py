@@ -36,3 +36,33 @@ def test_inverse_of_zero_raises():
         assert False, "expected ZeroDivisionError"
     except ZeroDivisionError:
         pass
+
+
+def test_inverse_of_one_is_one():
+    assert FIELD.inv(1) == 1
+
+
+def test_max_element_round_trip():
+    a = FIELD.order - 1  # 0xfff, все биты вектора единичны
+    inv = FIELD.inv(a)
+    assert FIELD.mul(a, inv) == 1
+
+
+def test_pow_zero_exponent_is_one():
+    assert FIELD.pow(5, 0) == 1
+
+
+def test_pow_zero_base_zero_exponent_raises():
+    try:
+        FIELD.pow(0, 0)
+        assert False, "expected ValueError"
+    except ValueError:
+        pass
+
+
+def test_fshift_t_rejects_non_positive_t():
+    try:
+        FIELD.fshift_t(1, 0)
+        assert False, "expected ValueError"
+    except ValueError:
+        pass
