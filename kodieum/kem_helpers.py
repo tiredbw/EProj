@@ -1,4 +1,10 @@
-"""Вспомогательные алгоритмы механизма инкапсуляции ключа (раздел 6 МР)."""
+"""Вспомогательные алгоритмы механизма инкапсуляции ключа (раздел 6 МР).
+
+Двоичные векторы здесь представлены как Python int: бит i вектора — это
+бит i числа (соответствие "a = sum a_i * 2^i" из раздела 5.2), как и в
+gf.py. Байтовые строки (ключи, выход KDF/шифра) конвертируются в этот вид
+через int.from_bytes(data, "little") — младший байт соответствует младшим
+индексам вектора."""
 
 from gost_primitives import kuznechik_encrypt_block, kdf_tree_streebog256, streebog256
 
@@ -24,3 +30,36 @@ def gen_unique_seq(m: int, n: int, k: bytes) -> list[int]:
     a = [kuznechik_encrypt_block(k, i.to_bytes(16, "big")) for i in range(size)]
     order = sorted(range(size), key=lambda idx: int.from_bytes(a[idx], "little"))
     return order[:n]
+
+
+def gen_weight_vec(n: int, t: int, m: int, seed: bytes) -> int:
+    """gen_weight_vec(n, t, m, seed) из раздела 6.2: псевдослучайный
+    двоичный вектор длины n и веса t (число ненулевых координат).
+    Возвращается как int, бит i = e_i.
+    """
+    m_prime = 16
+    ell = -(-(1 << m) // n)  # наименьшее ell: n*ell >= 2^m
+
+    while True:
+        l_bits = 256 + ell * t * m_prime
+        out = kdf_tree_streebog256(seed, l_bits)
+        out_int = int.from_bytes(out, "little")
+        seed_prime = (out_int & ((1 << 256) - 1)).to_bytes(32, "little")
+        v = out_int >> 256
+        mask_m = (1 << m) - 1
+
+        b = [(v >> (i * m_prime)) & mask_m for i in range(ell * t)]
+        indices = [j for j in range(ell * t) if b[j] < n]
+        if len(indices) < t:
+            seed = seed_prime
+            continue
+
+        a = [b[j] for j in indices[:t]]
+        if len(set(a)) != t:
+            seed = seed_prime
+            continue
+
+        e = 0
+        for value in a:
+            e |= 1 << value
+        return e
