@@ -50,6 +50,8 @@ def decode(field: GF2m, a: list[int], g: list[int], s: int, n: int, t: int) -> i
     вес t) при успехе или None (символ отказа ⊥) при неудаче."""
     mt = field.m * t
 
+    # alpha[0..n] — коэффициенты, получаемые сверткой (a_0..a_{j}) со
+    # скользящим окном убывающей ширины (2t): шаги 4-9 раздела 6.3.
     alpha = [0] * (n + 1)
     alpha[0] = a[0]
     for i in range(1, n + 1):

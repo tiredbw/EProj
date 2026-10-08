@@ -94,28 +94,33 @@ def keygen(field: GF2m, n: int, t: int) -> tuple[list[int], tuple[bytes, int]]:
         seed1 = seed_prime
 
 
+def _compute_syndrome(pk: list[int], e: int, n: int, mt: int) -> int:
+    """s_i = e_i XOR sum_col(A[i][col] * e_{mt+col}) — шаг 4 раздела 8.2,
+    т.е. s = e * (I_mt | A)^T. Вынесено отдельно для независимой проверки
+    этого инварианта от конкретного способа генерации e."""
+    n_minus_mt = n - mt
+    s = 0
+    for i in range(mt):
+        acc = (e >> i) & 1
+        row = pk[i]
+        for col in range(n_minus_mt):
+            if (row >> col) & 1:
+                acc ^= (e >> (mt + col)) & 1
+        if acc:
+            s |= 1 << i
+    return s
+
+
 def encaps(field: GF2m, n: int, t: int, pk: list[int]) -> tuple[int, int]:
     """Encaps из раздела 8.2. Возвращает (shk, enk=s)."""
     m = field.m
     mt = m * t
-    r = mt
     seed3 = secrets.token_bytes(32)
     e = gen_weight_vec(n, t, m, seed3)
-
-    s = 0
-    n_minus_mt = n - mt
-    for i in range(r):
-        bit = (e >> i) & 1
-        acc = bit
-        row = pk[i]
-        for col in range(n_minus_mt):
-            if (row >> col) & 1:
-                acc ^= (e >> (r + col)) & 1
-        if acc:
-            s |= 1 << i
+    s = _compute_syndrome(pk, e, n, mt)
 
     e_bytes = e.to_bytes((n + 7) // 8, "little")
-    s_bytes = s.to_bytes((r + 7) // 8, "little")
+    s_bytes = s.to_bytes((mt + 7) // 8, "little")
     shk = int.from_bytes(streebog256(e_bytes + s_bytes), "little")
     return shk, s
 
