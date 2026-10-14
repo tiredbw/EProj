@@ -1,0 +1,220 @@
+<svg viewBox="0 0 960 2340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker>
+    <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker>
+    <marker id="arrow-z" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker>
+  </defs>
+
+  <rect width="960" height="2340" fill="#ffffff"/>
+
+  <!-- ================= 1. КОДИЕУМ (y 0..760) ================= -->
+  <g>
+    <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">«Кодиеум» — постквантовый механизм инкапсуляции ключа</text>
+    <text x="480" y="58" text-anchor="middle" font-size="13" fill="#6b7280">коды, исправляющие ошибки (Гоппа / синдромное декодирование)</text>
+
+    <rect x="60" y="84" width="840" height="46" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="480" y="112" text-anchor="middle" font-size="14" fill="#312e81">1. Математический фундамент — арифметика в F₂ᵐ (раздел 5.3 МР)</text>
+
+    <line x1="480" y1="130" x2="480" y2="150" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-k)"/>
+
+    <rect x="60" y="152" width="840" height="46" rx="8" fill="#ecfeff" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="480" y="180" text-anchor="middle" font-size="14" fill="#164e63">2. Внешние примитивы — Стрибог-256, Кузнечик, KDF_TREE_GOSTR3411_2012_256</text>
+
+    <line x1="480" y1="198" x2="480" y2="218" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-k)"/>
+
+    <rect x="60" y="220" width="840" height="100" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="480" y="240" text-anchor="middle" font-size="13" font-weight="600" fill="#14532d">3. Вспомогательные алгоритмы (раздел 6 МР)</text>
+
+    <rect x="88" y="252" width="240" height="52" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="208" y="273" text-anchor="middle" font-size="12.5" font-weight="600" fill="#14532d">gen_unique_seq</text>
+    <text x="208" y="291" text-anchor="middle" font-size="11" fill="#374151">n различных чисел в [0, 2ᵐ)</text>
+
+    <rect x="360" y="252" width="240" height="52" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="480" y="273" text-anchor="middle" font-size="12.5" font-weight="600" fill="#14532d">gen_weight_vec</text>
+    <text x="480" y="291" text-anchor="middle" font-size="11" fill="#374151">вектор длины n, вес t</text>
+
+    <rect x="632" y="252" width="240" height="52" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="752" y="273" text-anchor="middle" font-size="12.5" font-weight="600" fill="#14532d">Decode</text>
+    <text x="752" y="291" text-anchor="middle" font-size="11" fill="#374151">синдром s → вектор ошибки e или ⊥</text>
+
+    <line x1="480" y1="320" x2="480" y2="340" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-k)"/>
+
+    <rect x="60" y="342" width="840" height="378" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+    <text x="480" y="364" text-anchor="middle" font-size="13" font-weight="600" fill="#7c2d12">4. Основной протокол (раздел 8 МР) — формирование общего ключа между A и B</text>
+
+    <text x="190" y="392" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">Сторона A</text>
+    <rect x="100" y="404" width="180" height="60" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="190" y="428" text-anchor="middle" font-size="12.5" font-weight="600" fill="#7c2d12">KeyGen</text>
+    <text x="190" y="446" text-anchor="middle" font-size="10.5" fill="#374151">n, m, t → (pk, sk)</text>
+
+    <line x1="280" y1="434" x2="640" y2="434" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow-k)"/>
+    <text x="460" y="424" text-anchor="middle" font-size="11" fill="#374151">pk</text>
+
+    <text x="750" y="392" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">Сторона B</text>
+    <rect x="660" y="404" width="180" height="60" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="750" y="428" text-anchor="middle" font-size="12.5" font-weight="600" fill="#7c2d12">Encaps</text>
+    <text x="750" y="446" text-anchor="middle" font-size="10.5" fill="#374151">pk → (shk, enk)</text>
+
+    <line x1="660" y1="500" x2="300" y2="500" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow-k)"/>
+    <text x="480" y="490" text-anchor="middle" font-size="11" fill="#374151">enk = s (синдром, шифртекст)</text>
+
+    <rect x="100" y="512" width="180" height="60" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="190" y="536" text-anchor="middle" font-size="12.5" font-weight="600" fill="#7c2d12">Decaps</text>
+    <text x="190" y="554" text-anchor="middle" font-size="10.5" fill="#374151">sk, enk → shk</text>
+
+    <line x1="190" y1="572" x2="190" y2="600" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-k)"/>
+    <line x1="750" y1="464" x2="750" y2="600" stroke="#9ca3af" stroke-width="1.5"/>
+    <line x1="190" y1="600" x2="750" y2="600" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <rect x="340" y="610" width="280" height="40" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="480" y="635" text-anchor="middle" font-size="13" font-weight="700" fill="#7f1d1d">shk (A) = shk (B)</text>
+
+    <text x="480" y="672" text-anchor="middle" font-size="11.5" fill="#374151">Decaps внутри вызывает Decode (слой 3); при неудаче shk = H₂₅₆(salt ‖ s) — защита от утечки через время выполнения</text>
+    <text x="480" y="694" text-anchor="middle" font-size="11.5" fill="#374151">KeyGen при неприводимой матрице повторяется с новым seed — предусмотренный, а не аварийный путь</text>
+
+    <text x="480" y="716" text-anchor="middle" font-size="11" fill="#9ca3af">Подробный разбор входов/выходов каждого блока — kodieum/DECOMPOSITION.md</text>
+  </g>
+
+  <line x1="0" y1="760" x2="960" y2="760" stroke="#e5e7eb" stroke-width="2"/>
+
+  <!-- ================= 2. ГИПЕРИКУМ (y 760..1560) ================= -->
+  <g transform="translate(0, 760)">
+    <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">«Гиперикум» — постквантовая подпись без сохранения состояния</text>
+    <text x="480" y="58" text-anchor="middle" font-size="13" fill="#6b7280">стойкость основана только на хэш-функции Стрибог (по образцу SPHINCS+)</text>
+
+    <rect x="60" y="84" width="840" height="40" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="480" y="109" text-anchor="middle" font-size="13.5" fill="#312e81">1. Байтовое представление строк, big-endian (раздел 4.5.1)</text>
+
+    <line x1="480" y1="124" x2="480" y2="144" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-g)"/>
+
+    <rect x="60" y="146" width="840" height="46" rx="8" fill="#ecfeff" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="480" y="167" text-anchor="middle" font-size="13.5" fill="#164e63">2. Стрибог-256/512 → настраиваемые хэш-функции Th, F, H, H_s, PRF, PRF_msg, H_msg</text>
+    <text x="480" y="183" text-anchor="middle" font-size="10.5" fill="#164e63">3. Адресация ADRS (224 бита, 8 типов) — уникальный контекст для каждого вызова хэша</text>
+
+    <line x1="480" y1="192" x2="480" y2="212" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-g)"/>
+
+    <rect x="60" y="214" width="840" height="140" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="480" y="234" text-anchor="middle" font-size="13" font-weight="600" fill="#14532d">4. Вспомогательные схемы (раздел 4.6–4.9) — каждая использует предыдущую как «лист» дерева</text>
+
+    <rect x="88" y="246" width="180" height="50" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="178" y="266" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">WOTS+C</text>
+    <text x="178" y="283" text-anchor="middle" font-size="10" fill="#374151">одноразовая подпись</text>
+
+    <text x="300" y="276" text-anchor="middle" font-size="16" fill="#22c55e">→</text>
+
+    <rect x="320" y="246" width="180" height="50" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="410" y="266" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">XMSS</text>
+    <text x="410" y="283" text-anchor="middle" font-size="10" fill="#374151">дерево Меркла из WOTS+C</text>
+
+    <text x="532" y="276" text-anchor="middle" font-size="16" fill="#22c55e">→</text>
+
+    <rect x="552" y="246" width="180" height="50" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="642" y="266" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">Гипердерево</text>
+    <text x="642" y="283" text-anchor="middle" font-size="10" fill="#374151">d слоёв деревьев XMSS</text>
+
+    <rect x="352" y="312" width="256" height="34" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="480" y="334" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">FORS+C — few-time подпись хэша сообщения</text>
+
+    <line x1="480" y1="354" x2="480" y2="374" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-g)"/>
+
+    <rect x="60" y="376" width="840" height="400" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+    <text x="480" y="398" text-anchor="middle" font-size="13" font-weight="600" fill="#7c2d12">5. Основной процесс (раздел 5) — Hypericum.KeyGen / sign / Verify</text>
+
+    <rect x="100" y="412" width="760" height="56" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="480" y="434" text-anchor="middle" font-size="12.5" font-weight="600" fill="#7c2d12">KeyGen</text>
+    <text x="480" y="452" text-anchor="middle" font-size="10.5" fill="#374151">SK.seed, SK.prf, PK.seed (случайные) → PK.root = корень гипердерева</text>
+
+    <line x1="480" y1="468" x2="480" y2="488" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-g)"/>
+
+    <rect x="100" y="490" width="760" height="130" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="480" y="510" text-anchor="middle" font-size="12.5" font-weight="600" fill="#7c2d12">Sign(M, SK) — 5 этапов</text>
+    <text x="480" y="530" text-anchor="middle" font-size="10.5" fill="#374151">1) зерно R  2) хэш-код M + индексы дерева FORS/листа гипердерева (перебор счётчика s)</text>
+    <text x="480" y="548" text-anchor="middle" font-size="10.5" fill="#374151">3) подписать хэш схемой FORS+C → SIG_FORS</text>
+    <text x="480" y="566" text-anchor="middle" font-size="10.5" fill="#374151">4) восстановить ключ проверки FORS+C из подписи (неявная проверка)</text>
+    <text x="480" y="584" text-anchor="middle" font-size="10.5" fill="#374151">5) подписать этот ключ гипердеревом → SIG_HT</text>
+    <text x="480" y="604" text-anchor="middle" font-size="11" font-weight="600" fill="#7c2d12">SIG = (R, s, SIG_FORS, SIG_HT)</text>
+
+    <line x1="480" y1="620" x2="480" y2="640" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-g)"/>
+
+    <rect x="100" y="642" width="760" height="56" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="480" y="664" text-anchor="middle" font-size="12.5" font-weight="600" fill="#7c2d12">Verify(M, SIG, PK)</text>
+    <text x="480" y="682" text-anchor="middle" font-size="10.5" fill="#374151">пересчитать хэш-код и индексы → восстановить ключ FORS+C → HT.verify сравнивает корень с PK.root</text>
+
+    <text x="480" y="724" text-anchor="middle" font-size="11.5" fill="#374151">Явной проверки WOTS+C/FORS+C нет — из подписи всегда восстанавливается элемент ключа, используемый выше по дереву</text>
+    <text x="480" y="746" text-anchor="middle" font-size="11.5" fill="#374151">Контрольные примеры (Приложение А) дают полную трассировку по слоям гипердерева — WOTS_PK / XMSS_PK на каждом</text>
+
+    <text x="480" y="784" text-anchor="middle" font-size="11" fill="#9ca3af">Подробный разбор входов/выходов каждого блока — giperikum/DECOMPOSITION.md</text>
+  </g>
+
+  <line x1="0" y1="1560" x2="960" y2="1560" stroke="#e5e7eb" stroke-width="2"/>
+
+  <!-- ================= 3. ЗЕМЛЯНИКА (y 1560..2340) ================= -->
+  <g transform="translate(0, 1560)">
+    <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">«Земляника» — постквантовый механизм инкапсуляции ключа</text>
+    <text x="480" y="58" text-anchor="middle" font-size="13" fill="#6b7280">решётки, module-LWE (по образцу Kyber / ML-KEM)</text>
+
+    <rect x="60" y="82" width="840" height="92" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="480" y="102" text-anchor="middle" font-size="13" font-weight="600" fill="#312e81">1. Математический фундамент (раздел 5) — каждый уровень опирается на предыдущий</text>
+    <text x="480" y="122" text-anchor="middle" font-size="11" fill="#312e81">биты/байты → кольцо Z_q → кольцо многочленов R_q = Z_q[x]/(x²⁵⁶+1)</text>
+    <text x="480" y="140" text-anchor="middle" font-size="11" fill="#312e81">→ векторы/матрицы из R_q (размер k×k) → распределение B_η → Compress/Decompress</text>
+
+    <line x1="480" y1="174" x2="480" y2="194" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-z)"/>
+
+    <rect x="60" y="196" width="840" height="40" rx="8" fill="#ecfeff" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="480" y="221" text-anchor="middle" font-size="13" fill="#164e63">2. Внешние примитивы — Стрибог-256/512, выработка псевдослучайных последовательностей (Р 1323565.1.006-2017)</text>
+
+    <line x1="480" y1="236" x2="480" y2="256" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-z)"/>
+
+    <rect x="60" y="258" width="840" height="86" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="480" y="278" text-anchor="middle" font-size="13" font-weight="600" fill="#14532d">3. Вспомогательные алгоритмы (раздел 7)</text>
+
+    <rect x="88" y="288" width="240" height="46" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="208" y="307" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">MatrixGen</text>
+    <text x="208" y="323" text-anchor="middle" font-size="10" fill="#374151">случайная матрица A ∈ R_q^(k×k)</text>
+
+    <rect x="360" y="288" width="240" height="46" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="480" y="307" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">CBD</text>
+    <text x="480" y="323" text-anchor="middle" font-size="10" fill="#374151">секретный вектор / шум, распределение B_η</text>
+
+    <rect x="632" y="288" width="240" height="46" rx="6" fill="#ffffff" stroke="#22c55e"/>
+    <text x="752" y="307" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">encode / decode</text>
+    <text x="752" y="323" text-anchor="middle" font-size="10" fill="#374151">многочлен ↔ байтовая строка</text>
+
+    <line x1="480" y1="344" x2="480" y2="364" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-z)"/>
+
+    <rect x="60" y="366" width="840" height="96" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="480" y="386" text-anchor="middle" font-size="13" font-weight="600" fill="#78350f">4. Zemlyanika.PKE (раздел 7.5) — базовая система шифрования с открытым ключом</text>
+    <text x="480" y="406" text-anchor="middle" font-size="11" fill="#78350f">KeyGen: A, s, e (CBD) → b = A·s + e, pk = (seed_A, b), sk = s</text>
+    <text x="480" y="424" text-anchor="middle" font-size="11" fill="#78350f">Enc(pk, m, rnd): r, e1, e2 (CBD) → u = Aᵀr+e1, v = bᵀr+e2+(q/2)·m → Compress → c</text>
+    <text x="480" y="442" text-anchor="middle" font-size="11" fill="#78350f">Dec(sk, c): m' = v'' − sᵀ·u'' (после Decompress), округление по порогу q/4 &lt; m'ᵢ ≤ 3q/4</text>
+
+    <line x1="480" y1="462" x2="480" y2="482" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-z)"/>
+
+    <rect x="60" y="484" width="840" height="236" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+    <text x="480" y="506" text-anchor="middle" font-size="13" font-weight="600" fill="#7c2d12">5. Zemlyanika.KEM (раздел 8) — надстройка Fujisaki–Okamoto над PKE</text>
+
+    <text x="190" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">Сторона A</text>
+    <rect x="100" y="544" width="180" height="56" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="190" y="566" text-anchor="middle" font-size="12" font-weight="600" fill="#7c2d12">KeyGen</text>
+    <text x="190" y="584" text-anchor="middle" font-size="10" fill="#374151">pk, sk=sk'‖pk‖H(pk)‖Z</text>
+
+    <line x1="280" y1="572" x2="640" y2="572" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow-z)"/>
+    <text x="460" y="562" text-anchor="middle" font-size="11" fill="#374151">pk</text>
+
+    <text x="750" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">Сторона B</text>
+    <rect x="660" y="544" width="180" height="56" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="750" y="566" text-anchor="middle" font-size="12" font-weight="600" fill="#7c2d12">Encaps</text>
+    <text x="750" y="584" text-anchor="middle" font-size="10" fill="#374151">m ← случайно, K‖rnd=G(m‖H(pk))</text>
+
+    <line x1="660" y1="634" x2="300" y2="634" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow-z)"/>
+    <text x="480" y="624" text-anchor="middle" font-size="11" fill="#374151">c = PKE.Enc(pk, m, rnd)</text>
+
+    <rect x="100" y="646" width="180" height="56" rx="6" fill="#ffffff" stroke="#f97316"/>
+    <text x="190" y="668" text-anchor="middle" font-size="12" font-weight="600" fill="#7c2d12">Decaps</text>
+    <text x="190" y="686" text-anchor="middle" font-size="10" fill="#374151">m'=PKE.Dec, пересчёт c', сравнение</text>
+
+    <text x="420" y="700" font-size="10.5" fill="#374151">если c' = c → K; иначе K̃ = H(Z‖c) (неявный отказ, защита от атак по шифртексту)</text>
+
+    <text x="480" y="742" text-anchor="middle" font-size="11" fill="#9ca3af">Подробный разбор входов/выходов каждого блока — zemlyanika/DECOMPOSITION.md</text>
+  </g>
+</svg>
