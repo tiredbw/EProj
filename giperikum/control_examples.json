@@ -1,0 +1,497 @@
+{
+ "source": "Гиперикум_МР, приложение А. Байтовые строки — в шестнадцатеричном виде, как в документе; для строк длиннее 64 байт документ даёт только первые и последние 4 байта (head/tail).",
+ "sets": [
+  {
+   "name": "Гиперикум_Б_256_64",
+   "message": "Example of Hypericum signature for parameter set b_256_64",
+   "digest": "3d22831137c2342e7abe77139d55c3e3e9afe3bad467e3d7451884d2fd4ceb8eab994cf640afe5a08ac001b9c539ec2d36d913841cc63fabca09adbe914f550d",
+   "h": 66,
+   "d": 22,
+   "b": 9,
+   "k": 38,
+   "w": 16,
+   "SK.seed": "cdf6bf76fe2611b469ab895ec848bc17538d37a62a2318bd130c46257add5071",
+   "SK.prf": "e8c5650585f63b106e2a3e31b3d714ff1e60663bd6382805cfdfbb4c08eaf632",
+   "PK.seed": "c76fde5cf91111b593abf833f7ef1047b5163550ca292ec778dbddb9ca05b28d",
+   "PK.root": "bd5b6c138b228f808709c5eafb46baf321b0ccf33720fc50e45c229432fbcee3",
+   "R": "5a436be0ddefaedb71a1dde2db675434bb901b7f276065745d35eea047e58488",
+   "s": "000001fa",
+   "PK_FORS": "5da59b6f1d6fc6bb3407937d2eb9316864f89428c092b7c5bd08b820f131d85b",
+   "idx_tree": 6693084576981150857,
+   "idx_leaf": 4,
+   "SIG_FORS_head": "91b9eb8b",
+   "SIG_FORS_tail": "8cc8f2c4",
+   "SIG_HT_layers": [
+    [
+     "703910b8",
+     "03b14f15"
+    ],
+    [
+     "9dae51ba",
+     "e56781d4"
+    ],
+    [
+     "56b8bf91",
+     "a4de1641"
+    ],
+    [
+     "e82222c1",
+     "a44393aa"
+    ],
+    [
+     "82e287da",
+     "1002d99a"
+    ],
+    [
+     "2899724a",
+     "336f1c19"
+    ],
+    [
+     "c97abc41",
+     "6853375d"
+    ],
+    [
+     "96d1e277",
+     "62c0da3b"
+    ],
+    [
+     "e439bf8e",
+     "14a7f020"
+    ],
+    [
+     "67d0d793",
+     "9cd366d8"
+    ],
+    [
+     "12226d98",
+     "22fe9dc9"
+    ],
+    [
+     "1d442fcf",
+     "47cbf04d"
+    ],
+    [
+     "d0e24801",
+     "4c45cb23"
+    ],
+    [
+     "3cfa04b4",
+     "5ffd9c1c"
+    ],
+    [
+     "1b0c7058",
+     "6d5eb108"
+    ],
+    [
+     "aad2f50c",
+     "181a7cfa"
+    ],
+    [
+     "69ffa9c4",
+     "b6524c98"
+    ],
+    [
+     "34c9ebee",
+     "252622a0"
+    ],
+    [
+     "5f31f4a4",
+     "e40b354e"
+    ],
+    [
+     "53aaacf0",
+     "d2213388"
+    ],
+    [
+     "15af785d",
+     "bfebb6fb"
+    ],
+    [
+     "76a3891e",
+     "b7a1700a"
+    ]
+   ],
+   "layers": [
+    {
+     "WOTS_PK": "dd688ebe5496927a3e9a6458d71956d7260348a4587b2a6e6b70a3a9fcb275a2",
+     "XMSS_PK": "dbe82cb47a67031b6628b2398631838b7f87eb4fd2463ad1d08471336567ac03"
+    },
+    {
+     "WOTS_PK": "532c0a768ec009a0b91266435b3a86400abdcf363a11ff0862cab19498e598cb",
+     "XMSS_PK": "88f9a5696704753c0c64957cef35d7f310b7800f1c9a8d93785ca624b9ff56f7"
+    },
+    {
+     "WOTS_PK": "b498ca762242aa051229403d85431b81a49d84059e27033edfbc1706e7c87809",
+     "XMSS_PK": "786a292c345e40b8d388ce67bff597b367f0a3a16ef645f1876618d48c9134f6"
+    },
+    {
+     "WOTS_PK": "6cf2ba18370a725de410160ad69f71c387444c205fa36e249a73de636f55f4f8",
+     "XMSS_PK": "59ae4973c792e13cd7a649a20383d7c5dc7a5523b37a425f537dffddb7eb2947"
+    },
+    {
+     "WOTS_PK": "dd68675b9e8cb84ff62f2cff2f7be5e7d622ad213768748cdc5d483829fbe282",
+     "XMSS_PK": "7ad4e0b050ca42ddfc1518ccb069511c1f7bd3998dcf84b40acc61801be8ca6b"
+    },
+    {
+     "WOTS_PK": "78202c846dd81b19568251fa071bd0916e90e79ef1f24f44eab2dd09f33e7970",
+     "XMSS_PK": "d9525b2557e0e1ca7edb53e5ca8ac95b4e3b0d11861e203e4c54663e1fa94f01"
+    },
+    {
+     "WOTS_PK": "c9db6b14f0aa2a5e23b605ec6579caf3ad4ddefae5fa5cc5933a9412cc14a7dd",
+     "XMSS_PK": "8d8b18e1eacc3708125833c14e12b2563f63d2a301172a35c8df06517de626bc"
+    },
+    {
+     "WOTS_PK": "ac1957f5d58124f1a5de0761b5f09bf3889c04c86c72ea8d148ef024ecb9c184",
+     "XMSS_PK": "f3f8f39c02779b70b94c065179c000ffef9f5d4a02dbb5eb96665d6d0c23cf7d"
+    },
+    {
+     "WOTS_PK": "e7ef9012a82e20a05338bc976d16f6fd8962cfbbddb79566a3f97a888bfda440",
+     "XMSS_PK": "af5ca2d8518aa8f1ef904675ab970791cf4abc9c6c598fe7c5a977730d40fa2c"
+    },
+    {
+     "WOTS_PK": "8a42b1217ec1eb77dbcf40c7ee9d284f7285f234ea5b5f30d3a0598400402c24",
+     "XMSS_PK": "479bf7a5e84cb08fada4007e114d826b1ea4ae8df14865bcb22957753d3de5cb"
+    },
+    {
+     "WOTS_PK": "ee2c41f7d9bd46db1bc1af2523d5832f937770aa8803a086b00fee06f742140e",
+     "XMSS_PK": "894dfc97e82887f144d00de09551681e9f3a785b1418bd2e6361d50a3e9bca41"
+    },
+    {
+     "WOTS_PK": "f2a3013654407097d2e5a52177c4b5e9dc6c378862011f4d2cefc089fca65dfc",
+     "XMSS_PK": "e8c5c86114835a99119340b896d09c137ae30acc6cd27ed081f6db1b14285dd0"
+    },
+    {
+     "WOTS_PK": "6afa8eb71146c7d35f473d49e9850b2531fec001d9f1c9c1d0b3a98bb30ccc4c",
+     "XMSS_PK": "bbe3ffc7b368e3059d8c03ef33de6a9744338151550a4e023494105aada73dce"
+    },
+    {
+     "WOTS_PK": "4e4014a66b76136db3622f9110f5f871b8e7691fb9ae2169372adb552316a8f0",
+     "XMSS_PK": "70964c7a9233cf6e1b82fd18a79311409fbd1a53f1f644f7955870d02ed971e2"
+    },
+    {
+     "WOTS_PK": "e01108391b797402b87410700698c75c6d68a85ff67fd22bd161f3341db17bc5",
+     "XMSS_PK": "c22e6f959a4d5ba11f75c8847688925e4f9346333f248d3a357b4d9782785ca0"
+    },
+    {
+     "WOTS_PK": "f9b8e2e93e39fef4bce40be5a9daba11e64c74a24a4d80ffa4ed5091fb100f18",
+     "XMSS_PK": "d54d80277909a55223166f7f03d705e6ff5be1b243b83f0dcf34c47588dd2b11"
+    },
+    {
+     "WOTS_PK": "3f30f93f4bcb427b121a9de6694c39504fbd3be41a46c37dfd589b764c9fadf1",
+     "XMSS_PK": "65766dbf81acd6f14d4667f1e27282228da25b56cae755e96962986ee3401186"
+    },
+    {
+     "WOTS_PK": "26806cf7385e5c2a1fbb41fc8036d3308dbdf942cb29a88abeb691b8b258facf",
+     "XMSS_PK": "2477948e4468d95fe8717405413b738af18780ad4c3cbd73a36f44bb1c9ee468"
+    },
+    {
+     "WOTS_PK": "c9ad90f4bdf0031f85832256126a72cfa2ce1f782848677b12284cc3b65c13a6",
+     "XMSS_PK": "58fe96ccde94082e3f5e9bedad6ba92bee8f823aaf595cda85eeb14af65b51a5"
+    },
+    {
+     "WOTS_PK": "99301d10693c504a0b7a7bd1918dcc87bafc19a45a73f93981eefc5aa358e08b",
+     "XMSS_PK": "8d783bef2015001001e2909249d4434d2918456249c2b29b1c6fdf9955f9e17a"
+    },
+    {
+     "WOTS_PK": "3a34e05269b6ab95215d0ac39ab187451a4ccc20aa685a98790be60a8f4fad3a",
+     "XMSS_PK": "e3e5c5b0b34c0bdd8a0a9b873dc4a96caf7fccb64c887d4c2f11d021b84730c2"
+    },
+    {
+     "WOTS_PK": "55d36501e037181a7ea13747ba8ea9ece30cd6b1128dbb73af0e340962a5d65b",
+     "XMSS_PK": "bd5b6c138b228f808709c5eafb46baf321b0ccf33720fc50e45c229432fbcee3"
+    }
+   ],
+   "verified": true
+  },
+  {
+   "name": "Гиперикум_М_256_64",
+   "message": "Example of Hypericum signature for parameter set m_256_64",
+   "digest": "6960d93d7f412fd089f087528bfcf15e01c1de1a9fd8594a1769e898eec444600002587de8453dac13f94f8ed32f98ec09a20ef7b3dc5b495ac3d716800f2451",
+   "h": 68,
+   "d": 4,
+   "b": 18,
+   "k": 15,
+   "w": 16,
+   "SK.seed": "cdf6bf76fe2611b469ab895ec848bc17538d37a62a2318bd130c46257add5071",
+   "SK.prf": "e8c5650585f63b106e2a3e31b3d714ff1e60663bd6382805cfdfbb4c08eaf632",
+   "PK.seed": "c76fde5cf91111b593abf833f7ef1047b5163550ca292ec778dbddb9ca05b28d",
+   "PK.root": "7eb6d8dbc2b1146ee31a69a9a03adb02ee054bc03e0c99b1ca37057aa6196066",
+   "R": "8120e20767bf53cae2891b79c867c35488555b99b46864be9e8a4c875e3c3deb",
+   "s": "0009e00a",
+   "PK_FORS": "8f7713e006abd28c688e74642ef15f0f049a0d1748207e46377ef33b5c38aaac",
+   "idx_tree": 778382328065376,
+   "idx_leaf": 127647,
+   "SIG_FORS_head": "7184763b",
+   "SIG_FORS_tail": "ec0afbeb",
+   "SIG_HT_layers": [
+    [
+     "b291e630",
+     "c37d0a7d"
+    ],
+    [
+     "c6740d25",
+     "a3d21a02"
+    ],
+    [
+     "df155bcc",
+     "05c2adff"
+    ],
+    [
+     "657ae4ee",
+     "51f3f888"
+    ]
+   ],
+   "layers": [
+    {
+     "WOTS_PK": "ec78409cfc962322c7b94c28a4ac646de6ebb232b61062a305e82d02c8a41d87",
+     "XMSS_PK": "32a63d797a49eaec391b6ab8adaa74428ecd3d5461e809425995f3e15692e21f"
+    },
+    {
+     "WOTS_PK": "776d2383c4882c676ea1b3f6c2c4e4a87b336b1028c5f37869ad75763f3e6de3",
+     "XMSS_PK": "56a8ad822bc63b3d75ae66e91f3379dcba5547c56f28da4a9a0aeda43e6566c5"
+    },
+    {
+     "WOTS_PK": "65ca9c020af64c5639c992c22818f586e311dccd698305120b48e29701fd16da",
+     "XMSS_PK": "5695e1f268c69f89ca809e1e6efe540700413bb6d406ccbdf3bbe3eaff9e60d0"
+    },
+    {
+     "WOTS_PK": "869137c42d6abe1f8338f04923b05262651795ef1884e94a1e2030f3d4d1c91b",
+     "XMSS_PK": "7eb6d8dbc2b1146ee31a69a9a03adb02ee054bc03e0c99b1ca37057aa6196066"
+    }
+   ],
+   "verified": true
+  },
+  {
+   "name": "Гиперикум_Б_256_20",
+   "message": "Example of Hypericum signature for parameter set b_256_20",
+   "digest": "7588025da6ec823d3b253f3c8fa81de8d4a57115b807f7ee391dd1a925705f6c666de793aad00af29f74d9e000f43dd44b8af1a059ab0944207dd8b39bf25fa9",
+   "h": 21,
+   "d": 7,
+   "b": 10,
+   "k": 36,
+   "w": 16,
+   "SK.seed": "cdf6bf76fe2611b469ab895ec848bc17538d37a62a2318bd130c46257add5071",
+   "SK.prf": "e8c5650585f63b106e2a3e31b3d714ff1e60663bd6382805cfdfbb4c08eaf632",
+   "PK.seed": "c76fde5cf91111b593abf833f7ef1047b5163550ca292ec778dbddb9ca05b28d",
+   "PK.root": "e2973b21956240deaea695bb5b27a2826169e52c43fc218ff5451b1fd3f1b593",
+   "R": "6594ea0d79109e18ea43e4ab8f5b22f0812721a3a4d59a9b9d5a84f96e34057b",
+   "s": "000003ca",
+   "PK_FORS": "63a4bc536dfe872f22f414bfcdbf0ab06ed93fb6a811fe7b31546d59ec565a02",
+   "idx_tree": 250103,
+   "idx_leaf": 2,
+   "SIG_FORS_head": "1c319da0",
+   "SIG_FORS_tail": "b71297f4",
+   "SIG_HT_layers": [
+    [
+     "f6106959",
+     "5d46ad7d"
+    ],
+    [
+     "787dedd3",
+     "32052925"
+    ],
+    [
+     "7964a248",
+     "461e3052"
+    ],
+    [
+     "ca94a9d8",
+     "3835b8c6"
+    ],
+    [
+     "1f3eb3a1",
+     "33ecadb8"
+    ],
+    [
+     "7d347dfb",
+     "9a801250"
+    ],
+    [
+     "ce9d95c2",
+     "1831f1e7"
+    ]
+   ],
+   "layers": [
+    {
+     "WOTS_PK": "878f0d4a6484ad4cfb7734346ff3db2c48339dc1aa1ebe578cefca56ab8c3a56",
+     "XMSS_PK": "c28cf9a28ef3fda5f64621aaf54c1a00631eb73cbb1c79659f45e254d256dff3"
+    },
+    {
+     "WOTS_PK": "54efadb78e8e8c62c1a817bcb882d6718d49b92b169565f5c3da0e2d7c5e2beb",
+     "XMSS_PK": "d770a1bc6d77f20ad520796c891ff358d703c8346881f1cf8675e7dd15e59137"
+    },
+    {
+     "WOTS_PK": "9726abf3f50e92b35f5627174291865cc6788ac235e443e86592fa1f5c305c6e",
+     "XMSS_PK": "6354dbe5c04d9ef48f6b62519e6a0a5124fd90db1f7d20e88cf7e7b86a05c815"
+    },
+    {
+     "WOTS_PK": "dedc4b13f42eb43da3027d9227ff7ce2bd215105eb5bab0e534a5d8c261016e7",
+     "XMSS_PK": "6c01e892a0028819786e419d6f23505f82f8bc2df644518b0fa6932459819a20"
+    },
+    {
+     "WOTS_PK": "138cc165325c448c48709c9a050d2fdf0b46050f8e2fe45d0772e570d84ef10c",
+     "XMSS_PK": "a2b3adbb4c3d86fb91948b625a88af5adf6d5c044d499e9c11a168ff7cc9e06a"
+    },
+    {
+     "WOTS_PK": "685c4c4ed7ef77a197a96a02eebcba2796dbfe756f9a9db4406e9c8a8e896dff",
+     "XMSS_PK": "c4ce37248294d898555e9bac621a5645fb7215921d3c91339c2a1f38293c4022"
+    },
+    {
+     "WOTS_PK": "9736287fc95d07433e6b216f3c42105a98f71d059e111b6f6ce2fa826aa1aeea",
+     "XMSS_PK": "e2973b21956240deaea695bb5b27a2826169e52c43fc218ff5451b1fd3f1b593"
+    }
+   ],
+   "verified": true
+  },
+  {
+   "name": "Гиперикум_М_256_20",
+   "message": "Example of Hypericum signature for parameter set m_256_20",
+   "digest": "dc74946ab938a24d51e2ab600ef8d7e080e59903e8243f2e1540b2d65838a1f00003463291b3e897359fdc832adae890f100f600d580ad24092d817b026c5eef",
+   "h": 26,
+   "d": 2,
+   "b": 18,
+   "k": 15,
+   "w": 16,
+   "SK.seed": "cdf6bf76fe2611b469ab895ec848bc17538d37a62a2318bd130c46257add5071",
+   "SK.prf": "e8c5650585f63b106e2a3e31b3d714ff1e60663bd6382805cfdfbb4c08eaf632",
+   "PK.seed": "c76fde5cf91111b593abf833f7ef1047b5163550ca292ec778dbddb9ca05b28d",
+   "PK.root": "6b8d9f62eb87c5bcdb22428f09990291020652e7e5aa27095a6c838e45c87a9f",
+   "R": "d9dba79b0608c7b0c6b250700ee585d5df1ecf77cb8f8bd736ca86150212dc77",
+   "s": "00053819",
+   "PK_FORS": "f28fe51ea293c72b8481eed9050b3df211670ffe2947c8e65e7c579a224ea526",
+   "idx_tree": 250103,
+   "idx_leaf": 4662,
+   "SIG_FORS_head": "00bdfac6",
+   "SIG_FORS_tail": "eb815611",
+   "SIG_HT_layers": [
+    [
+     "4039ccca",
+     "073fd2cc"
+    ],
+    [
+     "57a06cea",
+     "5cd59cab"
+    ]
+   ],
+   "layers": [
+    {
+     "WOTS_PK": "8ecb9a546fed52aff9c26ceb0aa8a34adf759319e4022383ccb901f3809cda51",
+     "XMSS_PK": "ba0dc8fc4b9897b0e9f2c38b80a810890731ef452982c20f93575e1469a4aaea"
+    },
+    {
+     "WOTS_PK": "3b5cac2625edc8eae42406c4c4968875ff110d66ee48bac7af609415a39eb38d",
+     "XMSS_PK": "6b8d9f62eb87c5bcdb22428f09990291020652e7e5aa27095a6c838e45c87a9f"
+    }
+   ],
+   "verified": true
+  },
+  {
+   "name": "Гиперикум_Б_128_20",
+   "message": "Example of Hypericum signature for parameter set b_128_20",
+   "digest": "c05cfce260a0f7fe4838bc87644acd6811fe7280266e3d44eec188e688924b756fbc479cc0eff82dc838cfdf0740bca628fe2c1047faa42543a9dc65d45d753c",
+   "h": 20,
+   "d": 5,
+   "b": 9,
+   "k": 18,
+   "w": 16,
+   "SK.seed": "cdf6bf76fe2611b469ab895ec848bc17538d37a62a2318bd130c46257add5071",
+   "SK.prf": "e8c5650585f63b106e2a3e31b3d714ff1e60663bd6382805cfdfbb4c08eaf632",
+   "PK.seed": "c76fde5cf91111b593abf833f7ef1047b5163550ca292ec778dbddb9ca05b28d",
+   "PK.root": "94f5ae54f13d2dfe95030b396c440418802e729f475fc2816b466c5c64cb9f7c",
+   "R": "16575bce7407095bf3d0360b25d7f47d2b0242f16089e8c1cc9fb56a139cf669",
+   "s": "000001b0",
+   "PK_FORS": "d595df2aebc2f134b5e39e1a4b450239a1bd857cd7d13e851357de08b5f325f1",
+   "idx_tree": 28221,
+   "idx_leaf": 4,
+   "SIG_FORS_head": "3320e791",
+   "SIG_FORS_tail": "68cf1ae7",
+   "SIG_HT_layers": [
+    [
+     "98b4ccce",
+     "b066b130"
+    ],
+    [
+     "c7e6d053",
+     "b066b130"
+    ],
+    [
+     "f066d115",
+     "b3356ff7"
+    ],
+    [
+     "443285f9",
+     "8c62d24e"
+    ],
+    [
+     "2f4bd128",
+     "5032a1ea"
+    ]
+   ],
+   "layers": [
+    {
+     "WOTS_PK": "a4c3fcc455d166b1248f1d2ba7db3f1aa95efb2bcb130d12066ec3f4aabe6174",
+     "XMSS_PK": "8fb3a8d8e50d061c3c249081ef5c7d1dae7736d2007c5dd298fac1a60150bf25"
+    },
+    {
+     "WOTS_PK": "8a5d210ca5169c88d47bb0d85c70d6b89499e3539f37a2f7bbc4ee417a1642d7",
+     "XMSS_PK": "5947c6a3f48934e73ab3ea8038c2cd67d4385b386833791005353944c660f35c"
+    },
+    {
+     "WOTS_PK": "43704a7413bf7d27ccb0ee6207161b59b0dcb11128988ebc2b95462a52e48e4f",
+     "XMSS_PK": "bc9aafc494a18cdad0af6b1f4639ecc33b06900ba4f331b9cec20167a25e895f"
+    },
+    {
+     "WOTS_PK": "e61246a41ce3766b1fe3eb40527a1e8dddec675f5fcfaf9ef21c6af64bde9f8e",
+     "XMSS_PK": "265c0aea96265b651aafa50712070d07d9e0bf0ccff931571450503072cb7aee"
+    },
+    {
+     "WOTS_PK": "d853202e37ad8c87fd910e6fd33a7b28d78bb4cc9f17fbd2fc1848b91ab30198",
+     "XMSS_PK": "94f5ae54f13d2dfe95030b396c440418802e729f475fc2816b466c5c64cb9f7c"
+    }
+   ],
+   "verified": true
+  },
+  {
+   "name": "Гиперикум_М_128_20",
+   "message": "Example of Hypericum signature for parameter set m_128_20",
+   "digest": "d591c4ce6645787a30ccddbaed43c5ccf8ea0007f762cd732eb0c3a50ab28bdd473d8476b3085d14db7e5b42e1604adb12700a2629233507f51cb515f159cd6d",
+   "h": 20,
+   "d": 2,
+   "b": 11,
+   "k": 14,
+   "w": 16,
+   "SK.seed": "cdf6bf76fe2611b469ab895ec848bc17538d37a62a2318bd130c46257add5071",
+   "SK.prf": "e8c5650585f63b106e2a3e31b3d714ff1e60663bd6382805cfdfbb4c08eaf632",
+   "PK.seed": "c76fde5cf91111b593abf833f7ef1047b5163550ca292ec778dbddb9ca05b28d",
+   "PK.root": "0edadfb42039a46a8d25043fed53bdd52442f6ef16a974b1509db10db9aeaafc",
+   "R": "45d6fd0e5cd9f36a37140f16ae59f28ef004aff8de177236f643445b6bad9b70",
+   "s": "000009ab",
+   "PK_FORS": "547bd3ab185c05d0fda13bad620c3a7e57de17595d03b565d7979393db45e472",
+   "idx_tree": 989,
+   "idx_leaf": 821,
+   "SIG_FORS_head": "36c80df6",
+   "SIG_FORS_tail": "525ca385",
+   "SIG_HT_layers": [
+    [
+     "90097fbf",
+     "21c26c5c"
+    ],
+    [
+     "4c28f9a6",
+     "2b6658ff"
+    ]
+   ],
+   "layers": [
+    {
+     "WOTS_PK": "b6e5614bccacd544a4e231bc4077ae19ecb20bb56ad1f4e7c530dd05dce0ac12",
+     "XMSS_PK": "a44f1283ffb3186e445e1a2905c136b5647ce10418c17e739269aecd4a5d5b87"
+    },
+    {
+     "WOTS_PK": "b3163af55465f028dab18f852af8b9abf5ac61d032a2f9ef36d9ea3019c8104b",
+     "XMSS_PK": "0edadfb42039a46a8d25043fed53bdd52442f6ef16a974b1509db10db9aeaafc"
+    }
+   ],
+   "verified": true
+  }
+ ]
+}
