@@ -5,7 +5,7 @@
 (в отличие от Стрибога).
 """
 
-from sbox import PI, PI_INV
+from .sbox import PI, PI_INV
 
 # p(x) = x^8 + x^7 + x^6 + x + 1 — модуль поля Q = GF(2)[x]/p(x)
 FIELD_POLY = 0x1C3

@@ -8,7 +8,7 @@ import random
 
 import pytest
 
-from streebog import C, g, lps, streebog256, streebog512, transform_l, transform_p, transform_s
+from gost.streebog import C, g, lps, lps_table, streebog256, streebog512, transform_l, transform_p, transform_s
 
 
 def vec(hex_text: str) -> int:
@@ -51,6 +51,12 @@ def test_s_of_zero_vector():
 
 def test_lps_of_zero_vector():
     assert lps(0) == K1
+
+
+def test_table_lps_matches_literal_lps():
+    rng = random.Random(34112018)
+    for a in [0, K1, (1 << 512) - 1] + [rng.getrandbits(512) for _ in range(200)]:
+        assert lps_table(a) == lps(a)
 
 
 def test_first_round_s_p_l_separately():
