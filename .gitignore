@@ -1,5 +1,6 @@
-# IDE
-.idea/
+# IDE: в репозитории хранятся только общие конфигурации запуска PyCharm
+.idea/*
+!.idea/runConfigurations/
 
 # Virtual environments
 .venv/

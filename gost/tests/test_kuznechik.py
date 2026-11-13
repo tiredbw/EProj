@@ -4,7 +4,7 @@ import random
 
 import pytest
 
-from kuznechik import (
+from gost.kuznechik import (
     ROUND_CONSTANTS,
     Kuznechik,
     _xor,

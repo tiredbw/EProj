@@ -1,0 +1,49 @@
+{
+ "note": "Собственные регрессионные векторы реализации: в МР «Земляника» контрольных примеров нет. Ключи и шифртекст даны хэш-кодами H (Стрибог-256) от их байтов.",
+ "vectors": [
+  {
+   "params": "Z512",
+   "seed_a": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0",
+   "seed_s": "b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0",
+   "z": "c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0",
+   "m": "d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0",
+   "H_pk": "09bce68b9114134f858b0c5314512bfbc638c8ae5f3843b125771b87e40a4417",
+   "H_sk": "5b4858b3ff350f3bdd276e77829745510694cf288359f398d9eb3a8484d95a24",
+   "H_c": "b28b18ba5e2d0bc56bd207e0f6585fe731adb699564c16c5634586eea030ebba",
+   "K": "18bf2120f3846f6748d6af855f27f5658fac22314af7fb24852166421ad56376"
+  },
+  {
+   "params": "Z768-R",
+   "seed_a": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+   "seed_s": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
+   "z": "c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1",
+   "m": "d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+   "H_pk": "9b2893be278d82c6e317f1d28513165ed0c0bab6dbcfdd44dbab13d7c9488fb8",
+   "H_sk": "8f60f78cd645de1ff8928e06c62d52a23053f48ce8508059aa2671e1bc217567",
+   "H_c": "69069f8aa635fcae39fe6599419bb34b553d6fabdada381131dafee2193a2187",
+   "K": "f880c63337d1e5d0198348df4ffc08b476b51c67a72b53c5c28e27662882fd03"
+  },
+  {
+   "params": "Z768-C",
+   "seed_a": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+   "seed_s": "b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+   "z": "c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2",
+   "m": "d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2",
+   "H_pk": "483852fcbf63128896411f475ca25a8b7b485f4a044a7993c9a4cecabb6d8819",
+   "H_sk": "ed62672e2c4c9afe09c88ddad85bad9179d59ba1f706cfa7a1f8587b192c43ac",
+   "H_c": "9629eb054be2d3bdbaa0a53bf6e07ba2ef9499e0456efd3f8dd6b71146049059",
+   "K": "6b3e874bd1e1264c9b83ca4fa5ea377d94d70ecfb2874e9d8f7bd386d8dc32a8"
+  },
+  {
+   "params": "Z1024",
+   "seed_a": "a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3",
+   "seed_s": "b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3",
+   "z": "c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3",
+   "m": "d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3",
+   "H_pk": "3347cc13c4e1ddfc75ea7b803e8daf97c238e5282bdd10a00987b9cb3bc03d3a",
+   "H_sk": "c7c386cb1e01f52c502fb728fad1d72e663cefbf88a0bb7789501f7501b14673",
+   "H_c": "dc03cee93e1dbcbf62a6b89b0607e5a4e01ceb8cd43d0d144bc8d5db8bf0593a",
+   "K": "c998811ca38b530dd053ee72cbddd255dfaf21d59891708dc6b2a8352e05927f"
+  }
+ ]
+}
