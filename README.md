@@ -51,11 +51,17 @@ python -m gost.examples
 python -m kodieum.examples
 python -m giperikum.examples
 python -m zemlyanika.examples
+python measure.py
+python compare_kem.py
 ```
 
 `python main.py` по очереди запускает наглядные прогоны всех частей и
-печатает сводку PASS/FAIL. `python -m pytest` прогоняет все тесты (около минуты; долгие тесты
-«Гиперикума» — при `GIPERIKUM_SLOW=1`). `*.examples` печатают каждое
+печатает сводку PASS/FAIL. `python -m pytest` прогоняет все тесты (около полутора минут; долгие тесты
+«Гиперикума» — при `GIPERIKUM_SLOW=1`), а `python -m pytest -k memory` — только тесты по
+памяти. `python measure.py` печатает время и пиковую память каждой операции,
+`python compare_kem.py` сравнивает «Кодиеум» и «Землянику» на одних и тех же
+входных данных (у обеих команд `--full` — все наборы). Подробно — раздел 9
+`REPORT.md`. `*.examples` печатают каждое
 контрольное значение документа: ожидаемое, полученное и итог сверки.
 
 То же в Docker, без установки Python:

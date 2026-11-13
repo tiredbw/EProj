@@ -28,7 +28,8 @@ python -m pytest kodieum/tests -v
 python -m kodieum.examples
 ```
 
-Ожидаемый итог тестов — `83 passed, 2 xfailed`, около 15 с. Два `xfailed`
+Ожидаемый итог тестов — `87 passed, 2 xfailed`, около 25 с; из них 4 —
+тесты по памяти (`tests/test_memory.py`, раздел 9 `REPORT.md`). Два `xfailed`
 — шаг 2 примеров Б.3 и Б.5, которые не воспроизводятся (см. ниже).
 `python -m kodieum.examples` показывает каждое контрольное значение
 приложения Б: вход, ожидаемое по документу, результат программы и
