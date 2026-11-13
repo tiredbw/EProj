@@ -156,4 +156,32 @@ secparam14128. Неявные ограничения m ⩽ 16 и n + t < 2ᵐ в
 | Специальные и граничные случаи | раздел 6 выше |
 | Требования к представлению данных | раздел 7 выше |
 | Обработка ошибочных входных значений | раздел 8 выше |
+| Сопоставление этапов кода с шагами алгоритма | раздел 10 ниже |
 | Контрольные примеры | приложение Б документа: промежуточные значения каждого вспомогательного алгоритма и полный проход KeyGen → Encaps → Decaps; перенесены в `control_examples.json` |
+
+## 10. Соответствие алгоритмов МР и функций кода
+
+Каждый алгоритм МР реализован отдельной функцией, номера шагов указаны в
+её описании (docstring). По таблице любой шаг документа находится в коде.
+
+| Алгоритм МР | Раздел МР | Функция | Вход → выход |
+|---|---|---|---|
+| fshift, сложение и умножение в F₂ᵐ | 5.3 | `Field.fshift`, `Field.mul_by_definition` (по формуле МР), `Field.mul` (через таблицы степеней), `Field.inv` в `field.py` | элементы поля как числа от 0 до 2ᵐ − 1 |
+| запись векторов в байты | 5.2; Б.1 | `vectors.serialize`, `vectors.serialize_list` | двоичный вектор длины ℓ → ⌈ℓ/8⌉ байт |
+| H₂₅₆, «Стрибог-512», HKDF | 3.2, 7; Б.1 | `primitives.h256`, `primitives.h512`, `primitives.hkdf` | байты → 32 или 64 байта; ключ → L бит |
+| gen_unique_seq | 6.1 | `auxiliary.gen_unique_seq` | m, число элементов, ключ → попарно различные элементы F₂ᵐ |
+| gen_weight_vec | 6.2 | `auxiliary.gen_weight_vec`, шаги 3–7 — `auxiliary.weight_vec_from_v` | n, t, m, seed → вектор длины n и веса t |
+| Decode, шаги 1–9 | 6.3 | `decode.compute_alpha` | a → α₀, …, αₙ |
+| Decode, шаг 10 | 6.3 | `decode.compute_r` | a, g, s → r |
+| Decode, шаги 11–15 | 6.3 | `decode.compute_b` | a, α → b_{j,i} |
+| Decode, шаг 16 | 6.3 | `decode.compute_beta` | r, b → β |
+| Decode, шаг 17 | 6.3 | `decode.build_system`, `decode.solve_homogeneous` | α, β → y, z |
+| Decode, шаги 19–23 | 6.3 | `decode.evaluate_locator` | a, y → v |
+| Decode целиком, шаги 18 и 24–28 | 6.3 | `decode.decode` | a, g, s → e веса t или `None` (⊥) |
+| KeyGen | 8.1 | `kem.keygen`; шаги 2–7 с повтором от seed′ — `kem.key_material`; шаг 6 — `goppa.parity_check_matrix`; шаг 7 — `goppa.systematic_part` | seed₁ → pk = A, sk = (seed₂, salt) |
+| KeyGen2 | 8.1.1 | `kem.keygen2` | seed₁ → pk = A, sk = (ℓ, salt) |
+| Encaps | 8.2 | `kem.encaps` → `kem.encapsulate`; шаг 4 — `kem.syndrome`; shk — `kem.shared_key` | pk, seed₃ → (shk, s) |
+| Decaps | 8.3 | `kem.decaps` → `kem.decapsulate`; шаг 4 — `decode.decode` и сверка синдрома `goppa.goppa_syndrome`; шаг 5 — `kem.rejection_key` | sk, s → shk или H₂₅₆(salt ‖ s) |
+| Decaps2 | 8.3.1 | `kem.decaps2` | (ℓ, salt), s → shk |
+| режим без согласования параметров | 7 | `unagreed.keygen`, `unagreed.keygen2`, `unagreed.encaps`, `unagreed.decaps`, `unagreed.decaps2` | pk = (A, t), sk = (…, p) |
+| «Стрибог-512» вместо H₂₅₆ | 7 | параметр `long_key=True` у `encaps`, `decaps`, `decaps2` | shk длиной 64 байта |

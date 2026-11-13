@@ -155,4 +155,28 @@ verify для WOTS+C и FORS+C нет, вместо этого из подпис
 | Специальные и граничные случаи | раздел 7 выше |
 | Требования к представлению данных | раздел 8 выше |
 | Обработка ошибочных входных значений | раздел 9 выше |
+| Сопоставление этапов кода с шагами алгоритма | раздел 11 ниже |
 | Контрольные примеры | приложение А документа: 6 наборов параметров с ключами, R, s, digest, индексами, PK_FORS и WOTS_PK/XMSS_PK на каждом слое; подписи даны только первыми и последними 4 байтами. Перенесены в `control_examples.json` |
+
+## 11. Соответствие алгоритмов МР и функций кода
+
+Каждый алгоритм МР реализован отдельной функцией с тем же набором шагов,
+номер алгоритма указан в её описании (docstring).
+
+| Алгоритм МР | Раздел МР | Функция | Вход → выход |
+|---|---|---|---|
+| адрес ADRS | 4.4 | класс `address.Address` | поля адреса → 28 байт |
+| алгоритмы 1, 2: toInt, toByte | 4.5.3 | `encoding.to_int`, `encoding.to_byte` | байты ↔ число, big-endian |
+| алгоритм 3: индексы из строки | 4.5.3 | `encoding.indexes` | строка, b, i → i-й индекс из b бит |
+| формулы (10)–(17): PRF_msg, PRF, H_msg, F, H, H_s, Th | 4.5.2, 4.10 | `hashes.prf_msg`, `hashes.prf`, `hashes.h_msg`, `hashes.f`, `hashes.h`, `hashes.h_s`, `hashes.th` | поля в обратном порядке → «Стрибог» |
+| алгоритм 4: цепочка | 4.6.2 | `wots.chain` | X, j, s → элемент цепочки с номером j + s |
+| алгоритмы 5, 6: ключи WOTS+C | 4.6.3 | `wots.sk_gen`, `wots.pk_gen` | SK.seed, PK.seed, ADRS → ключ |
+| алгоритм 7: шестнадцатеричная запись | 4.6.4 | `encoding.convert16` | 32 байта → 64 разряда |
+| алгоритм 8: подбор счётчика | 4.6.4 | `wots.hash_convert` | M → s и разряды с суммой S_{w,n} |
+| алгоритмы 9, 10: подпись WOTS+C и ключ из подписи | 4.6.4, 4.6.5 | `wots.sign`, `wots.pk_from_sig` | M → σ ‖ s; σ → ключ или `None` |
+| алгоритмы 11–14: XMSS | 4.7 | `xmss.treehash`, `xmss.pk_gen`, `xmss.sign`, `xmss.pk_from_sig` | лист, высота → корень, подпись, путь |
+| алгоритмы 15–17: гипердерево | 4.8 | `hypertree.pk_gen`, `hypertree.sign`, `hypertree.verify`; корни слоёв — `hypertree.layer_roots` | M, idx_tree, idx_leaf → SIG_HT или проверка |
+| алгоритмы 18–21: FORS+C | 4.9 | `fors.sk_gen`, `fors.treehash`, `fors.sign`, `fors.pk_from_sig` | md → SIG_FORS; SIG_FORS → PK_FORS |
+| алгоритм 22: выработка ключей (в МР заголовок ошибочно «Алгоритм 19») | 5.4 | `hypericum.keygen` | → (PK, SK) |
+| алгоритм 23: подпись; шаги 8–18 — подбор s | 5.5 | `hypericum.sign`, `hypericum.message_digest`, `hypericum.split_digest` | M, SK → SIG = R ‖ s ‖ SIG_FORS ‖ SIG_HT |
+| алгоритм 24: проверка; шаг 2 — разбор подписи | 5.6 | `hypericum.verify`, `hypericum.split_signature` | M, SIG, PK → `True` / `False` |
