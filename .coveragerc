@@ -1,0 +1,18 @@
+# Покрытие кода реализации автотестами:
+#   python -m coverage run -m pytest
+#   python -m coverage report
+# Считается код четырёх пакетов; сами тесты и демонстрационные прогоны
+# examples.py в расчёт не входят.
+[run]
+branch = True
+source =
+    gost
+    kodieum
+    giperikum
+    zemlyanika
+omit =
+    */tests/*
+    */examples.py
+
+[report]
+skip_empty = True

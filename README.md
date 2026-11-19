@@ -22,7 +22,7 @@
 | Что требует задание | Где в репозитории |
 |---|---|
 | исходный код программы на Python | [`gost/`](gost/), [`kodieum/`](kodieum/), [`giperikum/`](giperikum/), [`zemlyanika/`](zemlyanika/); [`main.py`](main.py) запускает все контрольные примеры, [`measure.py`](measure.py) измеряет время и память, [`compare_kem.py`](compare_kem.py) сравнивает «Кодиеум» и «Землянику» |
-| автоматические тесты | папка `tests/` в каждой части: 276 тестов, из них 14 по памяти |
+| автоматические тесты | папка `tests/` в каждой части: 276 тестов, из них 14 по памяти; покрытие кода реализации — 98 % |
 | набор контрольных примеров | ГОСТ 34.11-2018, ГОСТ 34.12-2018 и RFC 7836 — в [`gost/tests/`](gost/tests/); приложение Б «Кодиеума» — [`kodieum/control_examples.json`](kodieum/control_examples.json); приложение А «Гиперикума» — [`giperikum/control_examples.json`](giperikum/control_examples.json). Значения из PDF перенесены программой, а не вручную. В МР «Земляники» примеров нет, поэтому для неё сохранены собственные векторы [`zemlyanika/test_vectors.json`](zemlyanika/test_vectors.json), помеченные как не взятые из документа |
 | файл с инструкцией по запуску программы | этот файл, раздел [«Запуск»](#запуск); подробности — в README каждой папки |
 | перечень используемых зависимостей | раздел [«Зависимости»](#зависимости) и [`requirements.txt`](requirements.txt) |
@@ -71,6 +71,17 @@ FAIL 2 из 155 (несколько минут). Каждый FAIL объясн�
 - если пакет `gostcrypto` не установлен, пропускаются ещё 15 сверочных
   тестов `gost/`.
 
+**Покрытие тестами** — 98 % кода реализации: строки 98,9 %, ветвления
+96,0 %. Тесты и прогоны `examples.py` в расчёт не входят. Как
+измерить (нужен пакет `coverage`):
+
+```bash
+python -m coverage run -m pytest
+python -m coverage report
+```
+
+По пакетам и по проверяемой функциональности — раздел 10 `REPORT.md`.
+
 Другие команды:
 
 ```bash
@@ -105,7 +116,7 @@ docker run --rm eproj python -m pytest
 | реализация (`gost/`, `kodieum/`, `giperikum/`, `zemlyanika/`) | только стандартная библиотека: `dataclasses`; `secrets` для случайных начальных значений; `hmac.compare_digest` для сравнения шифртекстов за постоянное время в Decaps «Земляники» (сам HMAC свой, `gost/kdf.py`); `json`, `pathlib`, `sys` в прогонах примеров |
 | замеры и сравнение | стандартная библиотека: `tracemalloc`, `gc`, `time`, `statistics`, `random`; `subprocess` в `main.py` |
 | тесты | [`pytest`](https://pytest.org) — единственная зависимость в [`requirements.txt`](requirements.txt) |
-| необязательно | `gostcrypto`: нужен только 15 сверочным тестам `gost/` на случайных данных. Реализация от него не зависит |
+| необязательно | `gostcrypto`: нужен только 15 сверочным тестам `gost/` на случайных данных. Реализация от него не зависит. `coverage` — только для замера покрытия тестами |
 | Docker | образ `python:3.14.8-slim` ([`Dockerfile`](Dockerfile)) |
 
 ## Предложения по улучшению документов
@@ -191,6 +202,7 @@ docker run --rm eproj python -m pytest
   - раздел 9: память и сравнение «Кодиеума» с «Земляникой».
 - [`PROJECT_OVERVIEW.md`](PROJECT_OVERVIEW.md) — устройство проекта простыми словами.
 - [`QUESTIONS_TO_AUTHORS.md`](QUESTIONS_TO_AUTHORS.md) — вопросы к авторам МР.
+- [`PRESENTATION_GUIDE.md`](PRESENTATION_GUIDE.md) — текст доклада к защите и ответы на вероятные вопросы.
 - [`kodieum/kodieum.md`](kodieum/kodieum.md), [`giperikum/giperikum.md`](giperikum/giperikum.md), [`zemlyanika/zemlyanika.md`](zemlyanika/zemlyanika.md) — разбор каждого документа:
   - алгоритмы, вход и выход, параметры, граничные случаи, ошибочные входы;
   - таблица соответствия «алгоритм МР → функция в коде».
