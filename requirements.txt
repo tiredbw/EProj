@@ -6,3 +6,5 @@ pytest
 # gostcrypto — необязательно: только сверочные тесты gost/ на случайных данных,
 # без пакета они пропускаются. Реализация от него не зависит.
 # gostcrypto
+# coverage — необязательно: замер покрытия тестами (python -m coverage run -m pytest).
+# coverage
